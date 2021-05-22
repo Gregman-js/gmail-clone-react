@@ -43,3 +43,6 @@
     display: flex;
     padding-right: 20px;
 }
+.headerRight .avatar {
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Email.css';
+import '../styles/Email.css';
 import {
     ArrowBack,
     CheckCircle,
@@ -13,9 +13,12 @@ import {
 import EmailIcon from '@material-ui/icons/Email';
 import {IconButton} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {selectOpenMail} from "../features/emailSlice";
 
 function Email(props) {
     const history = useHistory();
+    const selectedMail = useSelector(selectOpenMail);
 
     return (
         <div className="email">
@@ -52,13 +55,13 @@ function Email(props) {
             </div>
             <div className="mailBody">
                 <div className="mailBodyHeader">
-                    <h2>Title</h2>
+                    <h2>{selectedMail?.subject}</h2>
                     <LabelImportant className={'mailBodyHeaderTitleIcon'}/>
-                    <p>Mail</p>
-                    <p className={'mailBodyHeaderTimestamp'}>timestamp</p>
+                    <p>{selectedMail?.to}</p>
+                    <p className={'mailBodyHeaderTimestamp'}>{selectedMail?.time}</p>
                 </div>
                 <div className="mailBodyMessage">
-                    Message
+                    {selectedMail?.message}
                 </div>
             </div>
         </div>

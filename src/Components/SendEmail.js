@@ -1,17 +1,26 @@
 import React from 'react';
-import './SendEmail.css'
+import '../styles/SendEmail.css'
 import {Close} from "@material-ui/icons";
 import {Button, IconButton} from "@material-ui/core";
 import {useForm} from "react-hook-form";
-import {closeSendMessage} from "./features/emailSlice";
+import {closeSendMessage} from "../features/emailSlice";
 import {useDispatch} from "react-redux";
+import {db} from "../firebase";
+import firebase from 'firebase';
 
 function SendEmail() {
     const {register, handleSubmit, watch, errors} = useForm();
     const dispatch = useDispatch();
 
     const onSubmit = formData => {
-        console.log(formData);
+        db.collection('emails').add({
+            to: formData.to,
+            subject: formData.subject,
+            message: formData.message,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        dispatch(closeSendMessage());
     }
 
     return (

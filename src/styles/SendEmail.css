@@ -11,6 +11,7 @@
     flex-direction: column;
     border: 1px solid whitesmoke;
     box-shadow: 0 5px 7px 0 rgba(0,0,0,0.24);
+    z-index: 1000;
 }
 
 .sendEmailHeader {

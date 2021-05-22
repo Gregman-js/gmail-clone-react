@@ -1,5 +1,5 @@
 import React from 'react';
-import './Sidebar.css'
+import '../styles/Sidebar.css'
 import {Button} from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 import InboxIcon from '@material-ui/icons/Inbox';
@@ -9,7 +9,7 @@ import NearMeIcon from '@material-ui/icons/NearMe';
 import NoteIcon from '@material-ui/icons/Note';
 import SidebarOption from "./SidebarOption";
 import {useDispatch} from "react-redux";
-import {openSendMessage} from "./features/emailSlice";
+import {openSendMessage} from "../features/emailSlice";
 
 function Sidebar() {
     const dispatch = useDispatch();
