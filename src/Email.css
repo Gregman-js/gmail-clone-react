@@ -1,0 +1,44 @@
+.email {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.emailTools {
+    background-color: #fff;
+    justify-content: space-between;
+    display: flex;
+}
+.mailBody {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-shadow: 0 5px 7px 0 rgba(0,0,0, 0.24);
+}
+.mailBodyHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.mailBodyHeader > *{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mailBodyHeader h2 {
+    font-weight: bold;
+    margin-right: 20px;
+}
+.mailBodyHeaderTitleIcon {
+    margin-right: 20px;
+    color: #e8ab02;
+}
+.mailBodyHeaderTimestamp {
+    margin-left: auto;
+    color: gray;
+}
