@@ -19,6 +19,7 @@ import {selectOpenMail} from "../features/emailSlice";
 function Email(props) {
     const history = useHistory();
     const selectedMail = useSelector(selectOpenMail);
+    console.log(selectedMail)
 
     return (
         <div className="email">
@@ -55,9 +56,9 @@ function Email(props) {
             </div>
             <div className="mailBody">
                 <div className="mailBodyHeader">
-                    <h2>{selectedMail?.subject}</h2>
+                    <h2>{selectedMail?.title}</h2>
                     <LabelImportant className={'mailBodyHeaderTitleIcon'}/>
-                    <p>{selectedMail?.to}</p>
+                    <p>{selectedMail?.mail}</p>
                     <p className={'mailBodyHeaderTimestamp'}>{selectedMail?.time}</p>
                 </div>
                 <div className="mailBodyMessage">
